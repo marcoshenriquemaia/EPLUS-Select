@@ -1,0 +1,126 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.EPLUS-slide-item {
+  list-style: none;
+  height: 22px;
+  min-height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: EPLUSSlideItemIn;
+  animation-duration: 500ms;
+  margin-top: 1px;
+}
+
+.select-text {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  font-size: 0.9em;
+  text-align: center;
+  width: 80%;
+}
+
+.EPLUS-box-slide {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 105.98px;
+  position: absolute;
+  top: 2em;
+  border: 1px solid black;
+  animation-name: EPLUSSlideOpen;
+  animation-duration: 500ms;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 0;
+}
+
+.EPLUS-box-slide::-webkit-scrollbar{
+  width: 3px;
+}
+
+.EPLUS-box-slide::-webkit-scrollbar-thumb{
+  background-color: #00000090;
+  border-radius: 5em;
+}
+
+.EPLUS-box-select {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 2em;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.arrow-select {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  width: 20px;
+  transform: rotate(-90deg);
+  height: 20px;
+  transition-duration: 500ms;
+}
+
+.EPLUS-arrow-rotate{
+  transform: rotate(90deg);
+}
+
+.item-slide-closed {
+  animation-name: EPLUSSlideItemOut;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.box-slide-closed {
+  animation: EPLUSSlideBoxClosed 700ms;
+  overflow-y: unset;
+}
+
+@keyframes EPLUSSlideBoxClosed {
+  from {
+    height: 105.98px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes EPLUSSlideItemOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes EPLUSSlideOpen {
+  from {
+    height: 0;
+  }
+  to {
+    height: 105.98px;
+  }
+}
+
+@keyframes EPLUSSlideItemIn {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
